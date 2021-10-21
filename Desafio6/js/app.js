@@ -1,9 +1,10 @@
+
 alert("Los días que se reservan turnos son los Lunes y Martes unicamente.");
 
-
-let contadorTurno = 0;
+let contadorTurno = 5;
 let tiempoEstimado = 0;
-const diasOcupados = [];
+const turnos = [];
+
 
 class turnero {
     constructor(diaLoM, horaAprox) {
@@ -16,8 +17,10 @@ class turnero {
 
         if ((this.dia == "Lunes") || (this.dia == "Martes")) {
             contadorTurno++;
-            diasOcupados.push(dia);
-            console.log(diasOcupados);
+            const turno = { dia:this.dia, hora:this.hora};
+            turnos.push(turno);
+            console.log(turnos[0].dia.toString());
+            console.log(turnos[0].hora.toString());
             alert("Su turno esta en el puesto " + contadorTurno + "°" + " y su hora va a ser " + this.hora + " hs.");
         } else {
             alert("El día que ingresó no es Lunes ni Martes,recargue la página e intentelo nuevamente.");
@@ -27,10 +30,6 @@ class turnero {
         alert("Su turno es el día " + this.dia + " a las " + this.hora + " hs");
     }
 
-
-
-
-
 }
 
 const turno1 = new turnero("Lunes", 14);
@@ -39,9 +38,7 @@ const turno3 = new turnero();
 
 turno3.sacarTurno();
 
-//definir un array
-//utilizar algun metodo o propiedad
-//incorporarlo
+
 
 
 
