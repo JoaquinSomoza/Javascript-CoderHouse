@@ -37,6 +37,12 @@ const turno3 = new turnero();
 turno3.sacarTurno();
 
 
-
+let padre = document.getElementById("otorgados");
+let horasOtorgadas = ["12", "13", "14", "15"];
+for (const horasOcupadas of horasOtorgadas) {
+    let li = document.createElement("li");
+    li.innerHTML = `${horasOcupadas} hs`
+    padre.appendChild(li);
+}
 
 

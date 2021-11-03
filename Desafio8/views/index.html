@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet" />
 
-    <script src="../app.js"></script>
+
     <link rel="stylesheet" href="../public/css/style.css">
 
 
@@ -38,15 +38,6 @@
             <h2>Horas de los turnos ocupados:</h2>
             <ul id="otorgados" class="lista__horario">
             </ul>
-            <script>
-                let padre = document.getElementById("otorgados");
-                let horasOtorgadas = ["12", "13", "14", "15"];
-                for (const horasOcupadas of horasOtorgadas) {
-                    let li = document.createElement("li");
-                    li.innerHTML = `${horasOcupadas} hs`
-                    padre.appendChild(li);
-                }
-            </script>
         </section>
         <section class="flex__section">
             <img src="../public/img/fila1.jpg" alt="fila">
@@ -120,6 +111,8 @@
         borrar.parentNode.removeChild(borrar);
     </script>
 
+
+    <script src="../app.js"></script>
 </body>
 
 
