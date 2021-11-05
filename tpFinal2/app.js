@@ -83,6 +83,6 @@ localStorage.setItem("turnos", JSON.stringify(turnos));
 localStorage.getItem("turnos");
 
 
-console.log(localStorage.getItem("turnos"));
+/* console.log(localStorage.getItem("turnos")); */
 
 
