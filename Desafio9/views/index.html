@@ -23,34 +23,24 @@
 
     <!-- Inicio del main -->
     <main>
-        <section>
-            <input class="inp__nombre" type="text" name="nombre" id="inpNombre" placeholder="Ingrese aqui su nombre">
-            <input class="inp__apellido" type="text" name="apellido" id="inpApellido"
-                placeholder="Ingrese aqui su apellido">
-            <br>
-            <input class="btn" type="button" name="selectDay" id="selectDay" value="Seleccione un día">
+        <section class="display__none">
+            <input class="btn" type="button" id="selectDay" name="selectDay" value="Seleccione un día">
             <input class="btn" type="button" name="selectHour" id="selectHour" value="Seleccione una hora">
-
-        </section>
-
-        <section>
-            <input class="btn" type="button" name="btnDia" id="btnDia" value="Día de mi turno">
-            <input class="btn" type="button" name="btnHora" id="btnHora" value="Hora de mi turno">
-            <input class="btn" type="button" name="btnEspera" id="btnEspera" value="Tiempo de espera">
         </section>
         <section>
-            <h2>Horas de los turnos ocupados:</h2>
+            <p class="main__instruccion">
+                Click acá para crear un nuevo turno.
+            </p>
+            <button class="btn" onClick="GFG_Fun()">
+                Sacar turno
+            </button>
+            <p id="GFG_DOWN"></p>
+        </section>
+        <article></article>
+        <section>
+            <h2>Turnos ocupados:</h2>
             <ul id="otorgados" class="lista__horario">
             </ul>
-            <script>
-                let padre = document.getElementById("otorgados");
-                let horasOtorgadas = ["12", "13", "14", "15"];
-                for (const horasOcupadas of horasOtorgadas) {
-                    let li = document.createElement("li");
-                    li.innerHTML = `${horasOcupadas} hs`
-                    padre.appendChild(li);
-                }
-            </script>
         </section>
         <section class="flex__section">
             <img src="../public/img/fila1.jpg" alt="fila">
@@ -100,14 +90,7 @@
     </footer>
 
 
-    <script>
-        let primerH2 = document.getElementById("subtitulo1");
-        console.log(primerH2.innerHTML);
-        let segundoH2 = document.getElementById("subtitulo2");
-        console.log(segundoH2.innerHTML);
-        let tercerH2 = document.getElementById("subtitulo3");
-        console.log(tercerH2.innerHTML);
-    </script>
+
 
     <script>
         let probandoClase = document.getElementsByClassName("clase__prueba");
@@ -116,14 +99,9 @@
         }
     </script>
 
-    <script> let primerFooter = document.createElement("div");
-        primerFooter.innerHTML = "<h4>Joaquin Somoza</h4>";
-        document.body.appendChild(primerFooter);
-    </script>
 
-    <script>        let borrar = document.getElementById("joaquin");
-        borrar.parentNode.removeChild(borrar);
-    </script>
+
+
 
 
     <script src="../app.js"></script>

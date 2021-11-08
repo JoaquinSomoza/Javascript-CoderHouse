@@ -23,11 +23,9 @@ h1{
 
 /* Css del main */
 
-.inp__nombre, .inp__apellido{
-    margin: 20px;
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
+/* cosas escondidas que permiten que funcione */
+.display__none {
+    display: none;
 }
 .btn{
     margin: 20px;
@@ -45,7 +43,17 @@ h1{
     transform: scale(1.1);
 }
 
-
+.main__instruccion{
+    margin-top: 30px;
+    padding: 20px;
+    color: rgb(61, 141, 118);
+}
+article form input{
+    margin: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+}
 .lista__horario{
     display:flex;
     justify-content: center;
