@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio clase 12 -Joaquin Somoza - C16860</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../public/css/style.css">
+
+
+</head>
+
+<body>
+    <!-- Inicio del header -->
+    <header class="flex__header">
+        <h1 id="titulo">Turnez</h1>
+        <div>
+            <p class="header__instruction"> Los días que se reservan turnos son los Lunes y Martes unicamente.</p>
+        </div>
+    </header>
+
+    <!-- Inicio del main -->
+    <main>
+        <section class="display__none">
+            <input class="btn" type="button" id="selectDay" name="selectDay" value="Seleccione un día">
+            <input class="btn" type="button" name="selectHour" id="selectHour" value="Seleccione una hora">
+        </section>
+        <section>
+            <button class="btn" onClick="GFG_Fun()">
+                Sacar turno
+            </button>
+            <p id="GFG_DOWN"></p>
+            <div id="alert"></div>
+        </section>
+        <article></article>
+        <section>
+            <h2>Turnos ocupados:</h2>
+            <ul id="otorgados" class="lista__horario">
+            </ul>
+        </section>
+        <section class="flex__section">
+            <img src="../public/img/fila1.jpg" alt="fila">
+            <div id="principal">
+                <h2 id="subtitulo1">Rápido</h2>
+                <p id="parrafo1" class="clase__prueba">En simples pasos evitará hacer filas extensas</p>
+            </div>
+        </section>
+        <section class="flex__section">
+            <img src="../public/img/silla2.jfif" alt="sillas">
+            <div>
+                <h2 id="subtitulo2">Amplio</h2>
+                <p id="parrafo2" class="clase__prueba">Mayor cantidad de turnos debido a la efectividad</p>
+            </div>
+        </section>
+        <section class="flex__section">
+            <img src="../public/img/filavacia.jfif" alt="sala">
+            <div>
+                <h2 id="subtitulo3">Tranquilo</h2>
+                <p id="parrafo3" class="clase__prueba">Evitas la aglomeración de personas en un mismo espacio.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Inicio del footer -->
+    <footer>
+        <section class="iconos__footer flex__footer">
+            <div>
+                <i class="bi bi-hand-thumbs-up"></i>
+                <h4>Es muy facil</h4>
+                <p>Solo te llevará unos minutos</p>
+            </div>
+            <div>
+                <i class="bi bi-pen"></i>
+                <h4>Completá los campos</h4>
+                <p>Solo tienes que cargar la informacion en los campos que van apareciendo</p>
+            </div>
+            <div>
+                <i class="bi bi-check-square"></i>
+                <h4>Obtené tu turno</h4>
+                <p>Ya está, el turno es tuyo.</p>
+            </div>
+
+        </section>
+        <p class="copyright">Copyright © 1999-2020 Turnez S.R.L.</p>
+        <p id="joaquin">Creador:</p>
+    </footer>
+
+
+
+
+    <script>
+        let probandoClase = document.getElementsByClassName("clase__prueba");
+        for (let i = 0; i < probandoClase.length; i++) {
+            console.log(probandoClase[i].innerHTML);
+        }
+    </script>
+
+
+
+
+
+    <!-- script de jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- script de archivo.js propio -->
+    <script src="../app.js"></script>
+
+
+</body>
+
+
+
+
+</html>
