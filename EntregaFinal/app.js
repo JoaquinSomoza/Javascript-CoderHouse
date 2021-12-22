@@ -11,20 +11,27 @@ let botonSelectHour = document.getElementById("selectHour");
 botonSelectHour.addEventListener("click", capturar);
 
 
+
 function capturar() {
     let dia = document.getElementById("dia").value;
     if ((dia == "Lunes") || (dia == "Martes")) {
         let hora = document.getElementById("hora").value;
         if ((hora >= 8) && (hora <= 18)) {
+            let noDisponible = turnoOcupado(dia, hora, turnos);
+            if (noDisponible) {
+                return alert("El turno que seleccionó se encuentra ocupado.");
+            }
             turnos.push({ "dia": dia, "hora": hora })
             console.log(turnos);
             let padre = document.getElementById("otorgados");
             padre.innerHTML = "";
+            localStorage.setItem("turnos", JSON.stringify(turnos));
             for (const turnosOcupados of turnos) {
                 let li = document.createElement("li");
                 li.innerHTML = `${turnosOcupados.dia}  ${turnosOcupados.hora} hs`;
                 padre.appendChild(li);
             }
+            return true;
         } else {
             $("#alert").append(`<p class="pAlert">Los turnos se reservan a partir de las 8 horas, intentelo nuevamente.</p>`);
         }
@@ -32,6 +39,7 @@ function capturar() {
         $("#alert").append(`<p class="pAlert">El día que ingresó no es Lunes ni Martes, intentelo nuevamente.</p>`);
 
     }
+
 }
 
 
@@ -61,6 +69,7 @@ function GFG_Fun() {
     s.setAttribute("value", "Reservar");
     s.setAttribute("onClick", "capturar()");
 
+
     // Append the email_ID input to the form
     form.append(ID);
 
@@ -76,6 +85,16 @@ function GFG_Fun() {
     document.getElementsByTagName("article")[0]
         .appendChild(form);
     $('#btnTurno').attr('disabled', true);
+}
+
+//funcion para turnos ocupados
+function turnoOcupado(dia, hora, turnos) {
+    for (const turno of turnos) {
+        if (turno.dia == dia && turno.hora == hora) {
+            return true;
+        }
+    }
+    return false;
 }
 
 
@@ -147,7 +166,14 @@ $('#icono3Footer').click(() => {
         })
 });
 
-
 //Local Storage
-localStorage.setItem("turnos", JSON.stringify(turnos));
+function obtenerLocalStorage() {
+    if (localStorage.getItem("turnos")) {
+        let localStorage = JSON.parse(localStorage.getItem("turnos"));
+        return localStorage;
+    } else {
+        console.log("no hay turnos en el local storage")
+    }
+}
+//localStorage.setItem("turnos", JSON.stringify(turnos));
 localStorage.getItem("turnos");
